@@ -1,2 +1,6 @@
 # maintained manually
 pip-tools
+dash
+pandas
+requests
+python-dotenv

@@ -1,4 +1,4 @@
 # things unsafe to install with pip tools
 # maintained manually
-pip==22.3
-setuptools==65.5.0
+pip==22.3.1
+setuptools==65.6.3

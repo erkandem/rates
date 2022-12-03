@@ -1,5 +1,6 @@
 #!/bin/bash
-which pyton
-pyton -V
+which python
+python -V
 pip -V
+pip install --upgrade virtualenv
 pip install -r ./requirements/builddeps.txt
