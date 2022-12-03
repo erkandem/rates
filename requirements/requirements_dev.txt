@@ -56,6 +56,8 @@ flask-compress==1.13
     # via
     #   -r requirements/requirements.txt
     #   dash
+fredapi==0.5.0
+    # via -r requirements/requirements.txt
 idna==3.4
     # via
     #   -r requirements/requirements.txt
@@ -88,7 +90,9 @@ packaging==21.3
     #   -r requirements/requirements.txt
     #   build
 pandas==1.5.1
-    # via -r requirements/requirements.txt
+    # via
+    #   -r requirements/requirements.txt
+    #   fredapi
 parso==0.8.3
     # via jedi
 pep517==0.13.0

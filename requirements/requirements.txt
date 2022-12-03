@@ -30,6 +30,8 @@ flask==2.2.2
     #   flask-compress
 flask-compress==1.13
     # via dash
+fredapi==0.5.0
+    # via -r requirements/requirements.in
 idna==3.4
     # via requests
 itsdangerous==2.1.2
@@ -45,7 +47,9 @@ numpy==1.23.4
 packaging==21.3
     # via build
 pandas==1.5.1
-    # via -r requirements/requirements.in
+    # via
+    #   -r requirements/requirements.in
+    #   fredapi
 pep517==0.13.0
     # via build
 pip-tools==6.9.0

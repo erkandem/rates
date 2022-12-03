@@ -1,22 +1,17 @@
-
 from dash import Dash, html, dcc
 import plotly.express as px
-import pandas as pd
+
+import services
 
 app = Dash(__name__)
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
 
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+yc = services.get_yield_curve()
+spreads = services.calculate_rate_spreads(yc)
+fig = px.line(spreads, x=spreads.index, y="DGS10-DGS2")
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='US 10 - 2 year spread'),
 
     html.Div(children='''
         Dash: A web application framework for your data.
@@ -24,7 +19,7 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='example-graph',
-        figure=fig
+        figure=fig,
     )
 ])
 
